@@ -11,3 +11,27 @@ The loop I'll be moving towards will be:
 4. Create a light object and assign it the height coordinate proportional to the height of the pixel
 5. Add the light to a structure of lights
 6. Create a wave pattern that uses that structure to turn on and off lights according to z height
+
+## Construction
+Rough plan:
+
+Light
+- Hold 3d position
+- Hold Status
+
+Tree
+- Collection of lights
+- Output to strip object
+
+Camera
+- Take photo
+
+Comms
+- Comms with the pi
+
+Utils
+- Localise
+
+## Running
+Activate env: `source myenv/bin/activate`
+Run with env: `sudo /home/pi/myenv/bin/python3 template.py -c`
