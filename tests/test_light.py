@@ -1,6 +1,7 @@
 import pytest
 import numpy as np
 from src.light import Light
+from src.colour import Colour
 
 
 def test_light_creation():
@@ -12,6 +13,16 @@ def test_light_creation():
 
     # Use np.array_equal to compare numpy arrays
     assert np.array_equal(light.rLNn, np.array([[x], [y], [z]]))
+    assert light.colour == Colour(0, 0, 0)
 
     # Check that the light is initially off
     assert light.status == False
+
+
+def test_turn_set_colour():
+    colour = Colour(23, 45, 240)
+
+    light = Light(23, 54, 56)
+    light.set_colour(colour)
+
+    assert light.colour == colour
