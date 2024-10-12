@@ -1,6 +1,6 @@
 import sys
 from src.tree import Tree
-from src.light import Light
+from src.light import LightFactory
 import argparse
 import random
 from rpi_ws281x import *
@@ -37,7 +37,7 @@ def main():
     # Instantiate the Tree object with generated coordinates and DummyNeoPixel strip
     tree_coords = [(random.randint(1, 100), random.randint(
         1, 100), random.randint(1, 100)) for _ in range(LED_COUNT)]
-    tree = Tree(tree_coords, strip)
+    tree = Tree(tree_coords, strip, LightFactory())
 
     print('Press Ctrl-C to quit.')
     if not args.clear:
