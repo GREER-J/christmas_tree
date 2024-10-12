@@ -105,7 +105,9 @@ if __name__ == '__main__':
 
     try:
         print("Sleeping until start time")
-        time.sleep(15)
+        for i in range(10, 0, -1):
+            print(i)
+            time.sleep(1)
 
         while True:
             print('Color wipe animations.')
