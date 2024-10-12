@@ -22,29 +22,17 @@ class Tree:
 
     def turn_on_light(self, index):
         """Turn on a specific light."""
-        if 0 <= index < len(self.lights):
-            self.lights[index].status = True
+        if 0 <= index < len(self._collection):
+            self._collection[index].status = True
             self.update_strip()
 
     def turn_off_light(self, index):
         """Turn off a specific light."""
-        if 0 <= index < len(self.lights):
-            self.lights[index].status = False
+        if 0 <= index < len(self._collection):
+            self._collection[index].status = False
             self.update_strip()
-
-    def turn_on_all(self):
-        """Turn on all lights with their respective colors."""
-        for light in self.lights:
-            light.status = True
-        self.update_strip()
-
-    def turn_off_all(self):
-        """Turn off all lights."""
-        for light in self.lights:
-            light.status = False
-        self.update_strip()
 
     def set_all_colors(self, color):
         """Set the color of all lights without turning them on."""
-        for light in self.lights:
-            light.set_color(color)
+        for light in self._collection:
+            light.set_colour(color)
