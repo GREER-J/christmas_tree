@@ -57,7 +57,8 @@ def main():
             tree.turn_on_light(light_index)
             print(f"Light {light_index} is now ON and held.")
         else:
-            print("Error: Light index out of range.")
+            print(
+                f"Error: Light index out of range {0} <= {light_index} < {tree.num_lights}")
             sys.exit(1)
     except ValueError:
         print("Error: Invalid light number provided.")
