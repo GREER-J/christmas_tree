@@ -13,7 +13,7 @@ def test_light_creation():
 
     # Use np.array_equal to compare numpy arrays
     assert np.array_equal(light.rLNn, np.array([[x], [y], [z]]))
-    assert light.colour == Colour(0, 0, 0)
+    assert light._colour == Colour(0, 0, 0)
 
     # Check that the light is initially off
     assert light.status == False
@@ -25,4 +25,15 @@ def test_turn_set_colour():
     light = Light(23, 54, 56)
     light.set_colour(colour)
 
-    assert light.colour == colour
+    assert light._colour == colour
+
+
+def test_turn_get_colour():
+    colour = Colour(23, 45, 240)
+
+    light = Light(23, 54, 56)
+    light.set_colour(colour)
+
+    res = light._colour
+
+    assert res == colour

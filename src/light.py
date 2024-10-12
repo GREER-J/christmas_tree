@@ -8,15 +8,19 @@ class Light:
         self._y = y_pos
         self._z = z_pos
 
-        self.colour = Colour(0, 0, 0)
+        self._colour = Colour(0, 0, 0)
 
     @property
     def rLNn(self):
         return np.array([[self._x], [self._y], [self._z]])
 
     @property
+    def colour(self):
+        return self._colour
+
+    @property
     def status(self) -> bool:
         return False
 
     def set_colour(self, colour: Colour) -> None:
-        self.colour = colour
+        self._colour = colour
