@@ -37,7 +37,7 @@ def main():
     # Instantiate the Tree object with generated coordinates and DummyNeoPixel strip
     tree_coords = [(random.randint(1, 100), random.randint(
         1, 100), random.randint(1, 100)) for _ in range(LED_COUNT)]
-    tree = Tree(tree_coords, strip, Light)
+    tree = Tree(tree_coords, strip)
 
     print('Press Ctrl-C to quit.')
     if not args.clear:
