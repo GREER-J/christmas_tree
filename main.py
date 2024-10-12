@@ -34,6 +34,8 @@ def main():
     # Intialize the library (must be called once before other functions).
     strip.begin()
 
+    strip.fill((255, 0, 0))
+
     # Instantiate the Tree object with generated coordinates and DummyNeoPixel strip
     tree_coords = [(random.randint(1, 100), random.randint(
         1, 100), random.randint(1, 100)) for _ in range(LED_COUNT)]
@@ -53,8 +55,8 @@ def main():
         if 0 <= light_index < tree.num_lights:
             # Turn on the specified light
             # Set light color to red
-            tree.set_light_color(light_index, (255, 0, 0))
-            tree.turn_on_light(light_index)
+            # tree.set_light_color(light_index, (255, 0, 0))
+            # tree.turn_on_light(light_index)
             print(f"Light {light_index} is now ON and held.")
         else:
             print(
