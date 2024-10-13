@@ -34,8 +34,6 @@ def main():
     # Intialize the library (must be called once before other functions).
     strip.begin()
 
-    strip.fill((255, 0, 0))
-
     # Instantiate the Tree object with generated coordinates and DummyNeoPixel strip
     tree_coords = [(random.randint(1, 100), random.randint(
         1, 100), random.randint(1, 100)) for _ in range(LED_COUNT)]
