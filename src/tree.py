@@ -13,13 +13,14 @@ class Tree:
     def update_strip(self):
         """Push the current state of all lights to the physical LED strip."""
         for i, light in enumerate(self._collection):
-            self.strip[i] = light.colour
+            color = Color(light.to_RBG())
+            self.strip.setPixelColor(i, color)
         self.strip.show()
 
-    def set_light_color(self, index, color):
+    def set_light_color(self, index, colour: Colour):
         """Set the color of a light, but do not physically turn it on yet."""
         if 0 <= index < len(self._collection):
-            self._collection[index].set_colour(color)
+            self._collection[index].set_colour(colour)
 
     def turn_on_light(self, index):
         """Turn on a specific light."""

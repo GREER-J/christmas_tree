@@ -1,6 +1,6 @@
 import sys
 from src.tree import Tree
-from src.light import LightFactory
+from src.light import LightFactory, Colour
 import argparse
 import random
 from rpi_ws281x import *
@@ -53,8 +53,8 @@ def main():
         if 0 <= light_index < tree.num_lights:
             # Turn on the specified light
             # Set light color to red
-            # tree.set_light_color(light_index, (255, 0, 0))
-            # tree.turn_on_light(light_index)
+            tree.set_light_color(light_index, Colour(255, 0, 0))
+            tree.turn_on_light(light_index)
             print(f"Light {light_index} is now ON and held.")
         else:
             print(

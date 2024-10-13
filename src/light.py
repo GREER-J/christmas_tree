@@ -31,6 +31,9 @@ class LightProtocol(Protocol):
     def turn_off(self) -> None:
         ...
 
+    def to_RBG(self) -> tuple[int, int, int]:
+        ...
+
 
 class LightFactory:
     def create_light(self, x_pos: float, y_pos: float, z_pos: float) -> LightProtocol:
@@ -60,3 +63,6 @@ class Light(LightProtocol):
 
     def set_colour(self, colour: Colour) -> None:
         self._colour = colour
+
+    def to_RBG(self) -> tuple[int, int, int]:
+        return (self.colour._red, self.colour._blue, self.colour._green)
