@@ -1,5 +1,6 @@
 from src.light import LightFactory, LightProtocol
 from src.colour import Colour
+from rpi_ws281x import Color
 
 
 class Tree:
