@@ -64,5 +64,5 @@ class Light(LightProtocol):
     def set_colour(self, colour: Colour) -> None:
         self._colour = colour
 
-    def to_RBG(self) -> tuple[int, int, int]:
-        return (self.colour._red, self.colour._blue, self.colour._green)
+    def to_RBG(self):
+        return self.colour._red, self.colour._blue, self.colour._green
